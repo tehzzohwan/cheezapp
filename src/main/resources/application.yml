@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: cheezapp
+
+  # Database Configuration (PostgreSQL)
+  datasource:
+    url: jdbc:postgresql://localhost:5433/cheezapp
+    username: postgres
+    password: 123456   # ← CHANGE THIS
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  # Liquibase Configuration
+#  liquibase:
+#    change-log: classpath:db/changelog/db.changelog-master.yaml
+#    enabled: true
+
+  # Security & JWT
+  security:
+    jwt:
+      secret: mySuperSecretKeyForCheezapp2026ChangeThisInProduction1234567890   # ← CHANGE THIS (min 32 chars)
+      expiration: 86400000     # 24 hours in milliseconds
+
+server:
+  port: 8098
+
+# Logging
+logging:
+  level:
+    com.yenosoft.cheezapp: INFO
+    org.springframework.web: INFO
+    org.springframework: INFO
+  pattern:
+    console: "%d{HH:mm:ss} %-5level %logger{36} - %msg%n"
+
+# OpenAPI / Swagger
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+
+# Multi-tenancy (We'll use schema-based for now)
+app:
+  tenant:
+    default-schema: public
+  jwt:
+    secret: mySuperSecretKeyForCheezapp2026ChangeThisInProduction1234567890   # ← CHANGE THIS (min 32 chars)
+    expiration: 86400000
