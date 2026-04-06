@@ -5,69 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="651ad14d-0b5a-4c50-81c3-8e731ba4ec73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/config/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/ServiceProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/ServiceProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/controller/TenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/AppointmentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/AppointmentStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/AvailabilitySlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/AvailabilitySlot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/ServiceProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/domain/audit/Auditable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/entity/audit/Auditable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/AppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/AvailabilitySlotRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/AvailabilitySlotRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/ServiceProviderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/ServiceProviderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/TenantRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/security/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/security/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/ServiceProviderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/ServiceProviderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/TenantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/TenantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/dto/AuthResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/dto/SlotResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yenosoft/cheezapp/service/dto/SlotResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/config/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/config/DataInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/AppointmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/ServiceProviderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/ServiceProviderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/TenantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/controller/TenantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/Appointment$AppointmentBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/Appointment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/AppointmentStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/AvailabilitySlot$AvailabilitySlotBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/AvailabilitySlot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/ServiceProvider$ServiceProviderBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/ServiceProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/Tenant$TenantBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/Tenant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/domain/audit/Auditable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/AppointmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/AppointmentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/AvailabilitySlotRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/AvailabilitySlotRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/ServiceProviderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/ServiceProviderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/TenantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/TenantRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/security/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/BookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/ProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/ProfileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/ServiceProviderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/ServiceProviderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/TenantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/TenantService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/AuthResponse$AuthResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/AuthResponse$AuthResponseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/AuthResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/SlotResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yenosoft/cheezapp/service/dto/SlotResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +117,7 @@
       <workItem from="1774517662280" duration="2783000" />
       <workItem from="1774598760619" duration="15226000" />
       <workItem from="1774769182642" duration="46067000" />
-      <workItem from="1775304450393" duration="19681000" />
+      <workItem from="1775304450393" duration="20845000" />
     </task>
     <servers />
   </component>
