@@ -1,10 +1,10 @@
 package com.yenosoft.cheezapp.service;
 
 import com.yenosoft.cheezapp.config.TenantContext;
-import com.yenosoft.cheezapp.domain.Role;
-import com.yenosoft.cheezapp.domain.ServiceProvider;
-import com.yenosoft.cheezapp.domain.Tenant;
-import com.yenosoft.cheezapp.domain.User;
+import com.yenosoft.cheezapp.entity.Role;
+import com.yenosoft.cheezapp.entity.ServiceProvider;
+import com.yenosoft.cheezapp.entity.Tenant;
+import com.yenosoft.cheezapp.entity.User;
 import com.yenosoft.cheezapp.repository.ServiceProviderRepository;
 import com.yenosoft.cheezapp.repository.UserRepository;
 import com.yenosoft.cheezapp.repository.TenantRepository;

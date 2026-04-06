@@ -1,4 +1,4 @@
-package com.yenosoft.cheezapp.domain;
+package com.yenosoft.cheezapp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

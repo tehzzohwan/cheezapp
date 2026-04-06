@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.controller;
 
-import com.yenosoft.cheezapp.domain.ServiceProvider;
+import com.yenosoft.cheezapp.entity.ServiceProvider;
 import com.yenosoft.cheezapp.service.ServiceProviderService;
 import com.yenosoft.cheezapp.service.dto.AuthResponse;
 import com.yenosoft.cheezapp.service.dto.ServiceProviderRegisterRequest;

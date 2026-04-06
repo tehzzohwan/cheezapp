@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.service;
 
-import com.yenosoft.cheezapp.domain.User;
+import com.yenosoft.cheezapp.entity.User;
 import com.yenosoft.cheezapp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

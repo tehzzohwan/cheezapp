@@ -32,19 +32,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                     .requestMatchers("/api/v1/appointments/book/**").hasRole("USER")           // Only USER can book
-                    .requestMatchers("/api/v1/profile/**").hasRole("USER")           // Only USER can book
-                    .requestMatchers("/api/v1/auth/register-sp").hasRole("USER")    // Anyone can register as SP for now
+                    .requestMatchers("/api/v1/profile/**").authenticated()         // Only USER can book
+                    // Anyone can register as SP for now
                     .anyRequest().authenticated()
                 )
-//                .requestMatchers(
-//                    "/api/v1/auth/**",
-//                    "/swagger-ui/**",
-//                    "/v3/api-docs/**",
-//                    "/swagger-ui.html"
-//                ).permitAll()
-//                .anyRequest()
-//                .authenticated()
-//            )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authenticationProvider(authenticationProvider())
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

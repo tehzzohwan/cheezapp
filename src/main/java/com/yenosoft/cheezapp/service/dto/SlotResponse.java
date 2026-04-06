@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.service.dto;
 
-import com.yenosoft.cheezapp.domain.AvailabilitySlot;
+import com.yenosoft.cheezapp.entity.AvailabilitySlot;
 import lombok.*;
 
 import java.time.LocalDate;

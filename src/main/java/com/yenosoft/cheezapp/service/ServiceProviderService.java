@@ -1,7 +1,6 @@
 package com.yenosoft.cheezapp.service;
 
-import com.yenosoft.cheezapp.config.TenantContext;
-import com.yenosoft.cheezapp.domain.*;
+import com.yenosoft.cheezapp.entity.*;
 import com.yenosoft.cheezapp.service.dto.AuthResponse;
 import com.yenosoft.cheezapp.service.dto.RegisterRequest;
 import com.yenosoft.cheezapp.service.dto.ServiceProviderRegisterRequest;
@@ -11,7 +10,6 @@ import com.yenosoft.cheezapp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -55,6 +53,7 @@ public class ServiceProviderService {
             .name(request.getBusinessName())
             .profession(request.getProfession())
             .bio(request.getBio())
+            .email(request.getEmail())
             .active(true)
             .build();
 

@@ -1,4 +1,4 @@
-package com.yenosoft.cheezapp.domain.audit;
+package com.yenosoft.cheezapp.entity.audit;
 
 import jakarta.persistence.*;
 import lombok.Getter;

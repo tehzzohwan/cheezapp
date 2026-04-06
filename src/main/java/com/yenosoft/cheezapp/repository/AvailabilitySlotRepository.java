@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.repository;
 
-import com.yenosoft.cheezapp.domain.AvailabilitySlot;
+import com.yenosoft.cheezapp.entity.AvailabilitySlot;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

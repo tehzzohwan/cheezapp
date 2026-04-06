@@ -1,7 +1,7 @@
 package com.yenosoft.cheezapp.service;
 
 import com.yenosoft.cheezapp.config.TenantContext;
-import com.yenosoft.cheezapp.domain.Tenant;
+import com.yenosoft.cheezapp.entity.Tenant;
 import com.yenosoft.cheezapp.exception.ResourceNotFoundException;
 import com.yenosoft.cheezapp.repository.TenantRepository;
 import lombok.RequiredArgsConstructor;

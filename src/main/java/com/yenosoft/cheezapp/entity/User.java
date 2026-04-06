@@ -1,6 +1,6 @@
-package com.yenosoft.cheezapp.domain;
+package com.yenosoft.cheezapp.entity;
 
-import com.yenosoft.cheezapp.domain.audit.Auditable;
+import com.yenosoft.cheezapp.entity.audit.Auditable;
 import jakarta.persistence.*;
 import lombok.*;
 
