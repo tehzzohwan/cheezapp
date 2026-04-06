@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.security;
 
-import com.yenosoft.cheezapp.domain.User;
+import com.yenosoft.cheezapp.entity.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.controller;
 
-import com.yenosoft.cheezapp.domain.Tenant;
+import com.yenosoft.cheezapp.entity.Tenant;
 import com.yenosoft.cheezapp.service.TenantService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
 package com.yenosoft.cheezapp.repository;
 
-import com.yenosoft.cheezapp.domain.ServiceProvider;
+import com.yenosoft.cheezapp.entity.ServiceProvider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +13,6 @@ public interface ServiceProviderRepository extends JpaRepository<ServiceProvider
     List<ServiceProvider> findByTenantIdAndActiveTrue(Long tenantId);
 
     Optional<ServiceProvider> findByIdAndTenantId(Long id, Long tenantId);
+
+    Optional<ServiceProvider> findByEmail(String userId);
 }

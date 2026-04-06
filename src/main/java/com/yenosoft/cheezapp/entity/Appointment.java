@@ -1,6 +1,6 @@
-package com.yenosoft.cheezapp.domain;
+package com.yenosoft.cheezapp.entity;
 
-import com.yenosoft.cheezapp.domain.audit.Auditable;
+import com.yenosoft.cheezapp.entity.audit.Auditable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,13 +8,13 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "availability_slot")
+@Table(name = "appointment")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AvailabilitySlot extends Auditable {
+public class Appointment extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +25,19 @@ public class AvailabilitySlot extends Auditable {
     private Tenant tenant;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_provider_id", nullable = false)
     private ServiceProvider serviceProvider;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "availability_slot_id", nullable = false)
+    private AvailabilitySlot availabilitySlot;
+
     @Column(nullable = false)
-    private LocalDate date;
+    private LocalDate appointmentDate;
 
     @Column(nullable = false)
     private LocalTime startTime;
@@ -37,5 +45,6 @@ public class AvailabilitySlot extends Auditable {
     @Column(nullable = false)
     private LocalTime endTime;
 
-    private boolean booked = false;
+    @Enumerated(EnumType.STRING)
+    private AppointmentStatus status = AppointmentStatus.CONFIRMED;
 }

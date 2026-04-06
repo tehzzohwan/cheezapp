@@ -1,8 +1,11 @@
-package com.yenosoft.cheezapp.domain;
+package com.yenosoft.cheezapp.entity;
 
-import com.yenosoft.cheezapp.domain.audit.Auditable;
+import com.yenosoft.cheezapp.entity.audit.Auditable;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "service_provider")
@@ -33,5 +36,11 @@ public class ServiceProvider extends Auditable {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "email")
+    private String email;
+
     private boolean active = true;
+
+    @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AvailabilitySchedule> schedules = new ArrayList<>();
 }

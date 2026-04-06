@@ -1,8 +1,9 @@
 package com.yenosoft.cheezapp.config;
 
-import com.yenosoft.cheezapp.domain.*;
+import com.yenosoft.cheezapp.entity.*;
 import com.yenosoft.cheezapp.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class DataInitializer implements CommandLineRunner {
 
     private final TenantRepository tenantRepository;
@@ -33,7 +35,7 @@ public class DataInitializer implements CommandLineRunner {
                 return tenantRepository.save(t);
             });
 
-        System.out.println("✅ Tenant loaded: " + tenant.getName());
+        log.info("✅ Tenant loaded: " + tenant.getName());
 
         // === 2. Create Test User ===
         if (userRepository.findByEmail("bobby@yenosoft.com").isEmpty()) {
@@ -47,7 +49,7 @@ public class DataInitializer implements CommandLineRunner {
                 .enabled(true)
                 .build();
             userRepository.save(user);
-            System.out.println("✅ Test User created → bobby@yenosoft.com / password");
+            log.info("✅ Test User created → bobby@yenosoft.com / password");
         }
 
         // === 3. Create Sample Service Providers ===
@@ -72,9 +74,9 @@ public class DataInitializer implements CommandLineRunner {
 
             serviceProviderRepository.saveAll(List.of(sp1, sp2));
 
-            System.out.println("✅ 2 Service Providers created successfully!");
+            log.info("✅ 2 Service Providers created successfully!");
         } else {
-            System.out.println("✅ Service Providers already exist (" + existingProviders.size() + " found)");
+            log.info("✅ Service Providers already exist (" + existingProviders.size() + " found)");
         }
 
         // === 4. Create Sample Availability Slots for Tomorrow ===
@@ -86,8 +88,8 @@ public class DataInitializer implements CommandLineRunner {
             createSampleSlotsForProvider(sp, tomorrow);
         }
 
-        System.out.println("🎉 Sample data initialization completed!");
-        System.out.println("   Login with: bobby@yenosoft.com / password");
+        log.info("🎉 Sample data initialization completed!");
+        log.info("   Login with: bobby@yenosoft.com / password");
     }
 
     private void createSampleSlotsForProvider(ServiceProvider sp, LocalDate date) {
@@ -118,6 +120,6 @@ public class DataInitializer implements CommandLineRunner {
             }
         }
 
-        System.out.println("   → Created slots for " + sp.getName() + " on " + date);
+        log.info("   → Created slots for " + sp.getName() + " on " + date);
     }
 }

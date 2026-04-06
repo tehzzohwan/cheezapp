@@ -1,8 +1,7 @@
 package com.yenosoft.cheezapp.service;
 
-import com.yenosoft.cheezapp.domain.Role;
-import com.yenosoft.cheezapp.domain.ServiceProvider;
-import com.yenosoft.cheezapp.domain.User;
+import com.yenosoft.cheezapp.entity.Role;
+import com.yenosoft.cheezapp.entity.User;
 import com.yenosoft.cheezapp.exception.ResourceNotFoundException;
 import com.yenosoft.cheezapp.repository.ServiceProviderRepository;
 import com.yenosoft.cheezapp.repository.UserRepository;

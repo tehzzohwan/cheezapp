@@ -1,7 +1,6 @@
 package com.yenosoft.cheezapp.service.dto;
 
-import com.yenosoft.cheezapp.domain.Role;
-import jakarta.validation.constraints.NotBlank;
+import com.yenosoft.cheezapp.entity.Role;
 import lombok.*;
 
 @Getter

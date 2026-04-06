@@ -1,29 +1,33 @@
 package com.yenosoft.cheezapp.service;
 
 import com.yenosoft.cheezapp.config.TenantContext;
-import com.yenosoft.cheezapp.domain.*;
+import com.yenosoft.cheezapp.entity.*;
 import com.yenosoft.cheezapp.exception.OverbookingException;
 import com.yenosoft.cheezapp.exception.ResourceNotFoundException;
 import com.yenosoft.cheezapp.repository.AppointmentRepository;
 import com.yenosoft.cheezapp.repository.AvailabilitySlotRepository;
 import com.yenosoft.cheezapp.repository.ServiceProviderRepository;
 import com.yenosoft.cheezapp.repository.UserRepository;
-import com.yenosoft.cheezapp.service.dto.AvailabilitySlotRequest;
-import com.yenosoft.cheezapp.service.dto.BookingResponse;
-import com.yenosoft.cheezapp.service.dto.ProviderDashboardResponse;
-import com.yenosoft.cheezapp.service.dto.SlotResponse;
+import com.yenosoft.cheezapp.service.dto.*;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class BookingService {
+
+    private static final Logger log = LoggerFactory.getLogger(BookingService.class);
 
     private final AvailabilitySlotRepository availabilitySlotRepository;
 
@@ -87,11 +91,11 @@ public class BookingService {
     }
 
     // ====================== GET AVAILABLE SLOTS (Improved Response) ======================
-    public List<AvailabilitySlot> getAvailableSlots(Long serviceProviderId, LocalDate date) {
-        if (date == null) date = LocalDate.now().plusDays(1);
-
-        return availabilitySlotRepository.findByServiceProviderIdAndDateAndBookedFalse(serviceProviderId, date);
-    }
+//    public List<AvailabilitySlot> getAvailableSlots(Long serviceProviderId, LocalDate date) {
+//        if (date == null) date = LocalDate.now().plusDays(1);
+//
+//        return availabilitySlotRepository.findByServiceProviderIdAndDateAndBookedFalse(serviceProviderId, date);
+//    }
 
     // ====================== SERVICE PROVIDER: Get My Slots ======================
     public List<AvailabilitySlot> getMyAvailableSlots(LocalDate date) {
@@ -282,7 +286,7 @@ public class BookingService {
         slot.setBooked(false);
         availabilitySlotRepository.save(slot);
 
-        System.out.println("✅ Appointment cancelled: ID " + appointmentId);
+        log.info("✅ Appointment cancelled: ID " + appointmentId);
     }
 
     // Convert to nice response
@@ -294,5 +298,86 @@ public class BookingService {
     public List<SlotResponse> getMyAvailableSlotsResponse(LocalDate date) {
         List<AvailabilitySlot> slots = getMyAvailableSlots(date);
         return slots.stream().map(SlotResponse::from).toList();
+    }
+
+    // ====================== SET WEEKLY RECURRING SCHEDULE ======================
+    @Transactional
+    public void setWeeklySchedule(WeeklyScheduleRequest request) {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (user.getRole() != Role.SERVICE_PROVIDER) {
+            throw new RuntimeException("Only service providers can set availability schedule");
+        }
+
+        Optional<ServiceProvider> spOpt = serviceProviderRepository.findByEmail(user.getEmail());
+
+        if (spOpt.isEmpty()) {
+            throw new ResourceNotFoundException("Service provider profile not found for this user with email: " + user.getEmail());
+        }
+//            .orElseThrow(() -> new RuntimeException("Service provider profile not found"));
+
+        ServiceProvider sp = spOpt.get();
+
+        // Clear old schedule
+        sp.getSchedules().clear();
+
+        for (WeeklyScheduleRequest.DaySchedule day : request.getDays()) {
+            AvailabilitySchedule schedule = AvailabilitySchedule.builder()
+                .serviceProvider(sp)
+                .dayOfWeek(day.getDayOfWeek())
+                .startTime(day.getStartTime())
+                .endTime(day.getEndTime())
+                .active(true)
+                .build();
+            sp.getSchedules().add(schedule);
+        }
+
+        serviceProviderRepository.save(sp);
+        BookingService.log.info("✅ Weekly schedule updated for: " + sp.getName());
+    }
+
+    // ====================== GET AVAILABLE SLOTS (On-Demand Generation) ======================
+    public List<AvailabilitySlot> getAvailableSlots(Long serviceProviderId, LocalDate date) {
+        if (date == null) date = LocalDate.now().plusDays(1);
+
+        ServiceProvider sp = serviceProviderRepository.findById(serviceProviderId)
+            .orElseThrow(() -> new RuntimeException("Service provider not found"));
+
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+
+        // Find the recurring schedule for this day
+        Optional<AvailabilitySchedule> scheduleOpt = sp.getSchedules().stream()
+            .filter(s -> s.getDayOfWeek() == dayOfWeek && s.isActive())
+            .findFirst();
+
+        if (scheduleOpt.isEmpty()) {
+            return List.of(); // No availability on this day
+        }
+
+        AvailabilitySchedule schedule = scheduleOpt.get();
+
+        // Generate slots (1-hour intervals by default)
+        List<AvailabilitySlot> slots = new ArrayList<>();
+        LocalTime current = schedule.getStartTime();
+
+        while (current.plusHours(1).isBefore(schedule.getEndTime()) ||
+            current.plusHours(1).equals(schedule.getEndTime())) {
+
+            AvailabilitySlot slot = AvailabilitySlot.builder()
+                .tenant(sp.getTenant())
+                .serviceProvider(sp)
+                .date(date)
+                .startTime(current)
+                .endTime(current.plusHours(1))
+                .booked(false)
+                .build();
+
+            slots.add(slot);
+            current = current.plusHours(1);
+        }
+
+        return slots;
     }
 }
