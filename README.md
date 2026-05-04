@@ -46,7 +46,7 @@ cd cheezapp
 Run the following SQL commands in PostgreSQL:
 
 ```sql
-CREATE DATABASE cheezapp_db;
+CREATE DATABASE cheezapp;
 ```
 
 ### 4. Run the Application
